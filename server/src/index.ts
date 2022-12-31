@@ -1,3 +1,4 @@
+import cors from "cors";
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 
@@ -6,10 +7,11 @@ config();
 
 import News from "./models/News";
 
-const PORT = 5000;
+const PORT = process.env.PORT || 6000;
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/news", async (req: Request, res: Response) => {
@@ -23,6 +25,6 @@ app.post("/news", async (req: Request, res: Response) => {
 
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URI!).then(() => {
-  console.log(`Listening on the port ${PORT}`);
+  console.log(`Listening on the port ${PORT}.`);
   app.listen(PORT);
 });
