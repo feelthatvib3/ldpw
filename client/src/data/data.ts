@@ -1,6 +1,7 @@
-import { ThemeOption } from "../types/themeOption";
+import { NavigationType } from "../types/navigationType";
+import { ThemeOptionType } from "../types/themeOptionType";
 
-export const themeOptions: ThemeOption[] = [
+export const themeOptions: ThemeOptionType[] = [
   {
     name: "system",
   },
@@ -9,5 +10,24 @@ export const themeOptions: ThemeOption[] = [
   },
   {
     name: "light",
+  },
+];
+
+export const navigation: NavigationType[] = [
+  {
+    title: "О нас",
+    href: "/",
+  },
+  {
+    title: "Новости",
+    href: "/",
+  },
+  {
+    title: "Документация",
+    href: "/",
+  },
+  {
+    title: "Контакты",
+    href: "/",
   },
 ];
