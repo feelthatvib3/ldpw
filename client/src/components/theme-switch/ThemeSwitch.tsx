@@ -50,14 +50,16 @@ export const ThemeSwitch = () => {
 
   return (
     <select
-      className="border-1 rounded-md border-light_border bg-white py-1 capitalize focus:border-light_border focus:ring-0 dark:border-dark_border dark:bg-black"
-      onChange={() => setTheme((event?.target as any).value)}
+      className="border-1 w-full cursor-pointer rounded-md border-light_border bg-white py-1 capitalize focus:border-light_border focus:ring-0 dark:border-dark_border dark:bg-black lg:w-[12%]"
+      onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+        setTheme(e.target.value)
+      }
       value={theme!}
     >
       {themeOptions.map((option) => {
         return (
           <option className="capitalize" key={option.name}>
-            <span>{option.name}</span>
+            {option.name}
           </option>
           // <button onClick={() => setTheme(option.name)} key={option.name}></button>
         );
